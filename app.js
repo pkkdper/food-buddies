@@ -11,7 +11,11 @@ const express = require("express");
 
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
+<<<<<<< HEAD
 const hbs = require("ejs");
+=======
+const ejs = require("ejs");
+>>>>>>> lu-step2
 
 const app = express();
 

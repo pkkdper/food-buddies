@@ -9,7 +9,11 @@ const MONGO_URI =
   process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/food-buddies";
 
 mongoose
+<<<<<<< HEAD
   .connect(MONGO_URI, {family:4})
+=======
+  .connect(MONGO_URI, {family: 4})
+>>>>>>> lu-step2
   .then((x) => {
     const databaseName = x.connections[0].name;
     console.log(`Connected to Mongo! Database name: "${databaseName}"`);
