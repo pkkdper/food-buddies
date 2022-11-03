@@ -15,6 +15,13 @@ const ejs = require("ejs");
 
 const app = express();
 
+
+// require layouts
+const ejsLayouts = require("express-ejs-layouts")
+// set layouts
+app.use(ejsLayouts)
+
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
