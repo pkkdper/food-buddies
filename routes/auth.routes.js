@@ -22,7 +22,7 @@ router.post("/signup", async (req, res) => {
       username: req.body.username,
       password: hashedPassword,
     });
-    res.redirect("profile");
+    res.redirect("/auth/login");
   } catch (error) {
     console.log(error);
     res.render('auth/signup', { errorMessage: error.message})
@@ -37,26 +37,30 @@ router.post("/signup", async (req, res) => {
   // setting POST login route
 
   router.post('/login', async (req, res) => {
+    console.log("here", req.body)
     const { username, password } = req.body
+
     const currentUser = await User.findOne({ username })
     if (!currentUser) {
-      res.render('/login', { errorMessage: 'No user with this username'})
+      res.render('auth/login', { errorMessage: 'No user with this username'})
     } else {
       if (bcrypt.compareSync(password, currentUser.password)) {
         console.log('Correct password')
         req.session.user = currentUser
-        res.redirect('profile')
+        res.redirect('/auth/profile')
       } else {
-        res.render('/login', { errorMessage: 'Incorrect password'})
+        res.render('auth/login', { errorMessage: 'Incorrect password'})
       }
     }
   })
 
 // setting profile route
 router.get('/profile', (req, res) => {
-    res.render('user/profile')
+  console.log(req.session)
+    res.render('user/profile', {user:req.session.user.username})
 })
 
 // setting logout route
 
 module.exports = router;
+
