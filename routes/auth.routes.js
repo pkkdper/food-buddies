@@ -71,9 +71,9 @@ router.get('/logout', (req, res, next) => {
 })
 
 // setting food home route
-router.get('/food-home', (req, res) => {
+router.get('/home', (req, res) => {
   console.log(req.session)
-    res.render('food-home')
+    res.render('home')
 })
 
 module.exports = router;
