@@ -7,7 +7,7 @@ const app = require('../app')
 
 // setting signup route
 router.get('/signup', (req, res) => {
-  res.render('auth/signup')
+  res.render('auth/signup', { isConnected: false })
 })
 
 
@@ -31,7 +31,7 @@ router.post("/signup", async (req, res) => {
 
   // setting login route
   router.get('/login', (req, res) => {
-    res.render('auth/login')
+    res.render('auth/login', { isConnected: false })
   })
 
   // setting POST login route
@@ -42,14 +42,14 @@ router.post("/signup", async (req, res) => {
 
     const currentUser = await User.findOne({ username })
     if (!currentUser) {
-      res.render('auth/login', { errorMessage: 'No user with this username'})
+      res.render('auth/login', { errorMessage: 'No user with this username', isConnected: false })
     } else {
       if (bcrypt.compareSync(password, currentUser.password)) {
         console.log('Correct password')
         req.session.user = currentUser
         res.redirect('/auth/profile')
       } else {
-        res.render('auth/login', { errorMessage: 'Incorrect password'})
+        res.render('auth/login', { errorMessage: 'Incorrect password', isConnected: false })
       }
     }
   })
@@ -57,8 +57,11 @@ router.post("/signup", async (req, res) => {
 // setting profile route
 router.get('/profile', (req, res) => {
   console.log(req.session)
-    res.render('user/profile', {user:req.session.user.username})
-})
+  if (req.session.user) {
+    res.render('user/profile', { user: req.session.user.username, isConnected: true })
+  } else {
+    res.redirect('/auth/login')
+  }})
 
 // setting logout route
 router.get('/logout', (req, res, next) => {
@@ -71,9 +74,9 @@ router.get('/logout', (req, res, next) => {
 })
 
 // setting food home route
-router.get('/food-home', (req, res) => {
+router.get('/home', (req, res) => {
   console.log(req.session)
-    res.render('food-home')
+    res.render('home')
 })
 
 module.exports = router;
