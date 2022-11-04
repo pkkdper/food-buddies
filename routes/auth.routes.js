@@ -1,5 +1,6 @@
 const express = require('express')
 const User = require('../models/User.model')
+const Recipe = require('../models/Recipes.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const app = require('../app')
