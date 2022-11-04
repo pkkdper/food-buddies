@@ -22,10 +22,10 @@ router.post("/signup", async (req, res) => {
       username: req.body.username,
       password: hashedPassword,
     });
-    res.redirect("profile");
+    res.redirect("/auth/login");
   } catch (error) {
     console.log(error);
-    res.render('user/profile', { errorMessage: error.message, isConnected: false })
+    res.render('auth/signup', { errorMessage: error.message})
   }
 });
 
@@ -33,12 +33,13 @@ router.post("/signup", async (req, res) => {
   router.get('/login', (req, res) => {
     res.render('auth/login')
   })
-  module.exports = router;
 
   // setting POST login route
 
   router.post('/login', async (req, res) => {
+    console.log("here", req.body)
     const { username, password } = req.body
+
     const currentUser = await User.findOne({ username })
     if (!currentUser) {
       res.render('auth/login', { errorMessage: 'No user with this username'})
@@ -46,20 +47,18 @@ router.post("/signup", async (req, res) => {
       if (bcrypt.compareSync(password, currentUser.password)) {
         console.log('Correct password')
         req.session.user = currentUser
-        res.redirect('profile')
+        res.redirect('/auth/profile')
       } else {
         res.render('auth/login', { errorMessage: 'Incorrect password'})
       }
     }
   })
 
-
-
 // setting profile route
 router.get('/profile', (req, res) => {
-    res.render('user/profile')
+  console.log(req.session)
+    res.render('user/profile', {user:req.session.user.username})
 })
-
 
 // setting logout route
 router.get('/logout', (req, res, next) => {
@@ -71,6 +70,5 @@ router.get('/logout', (req, res, next) => {
   })
 })
 
-
-
 module.exports = router;
+
