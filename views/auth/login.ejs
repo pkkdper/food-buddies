@@ -9,3 +9,8 @@
 <button>Login</button>
 
 </form>
+
+
+<% if (typeof errorMessage !== 'undefined') { %>
+  <p><%= errorMessage %></p>
+  <% } %>
