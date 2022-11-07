@@ -21,14 +21,19 @@ const recipeSchema = new Schema(
       enum: ["breakfast", "lunch", "dessert", "dinner"]
     },
     veg: {
-        type:Boolean,
+        type: Boolean,
         required:true
     },
     image: {
         type: String
     }
   },
-)
+  {
+    // this second object adds extra properties: `createdAt` and `updatedAt`    
+    timestamps: true
+  }
+);
+
 
 const Recipe = model('Recipe', recipeSchema)
 
