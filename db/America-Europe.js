@@ -5,28 +5,40 @@ require("./index")
 
 let recipes = [
   {
-    name: "burger",
+    name: "Tater Tot Casserole",
     continent: "America",
     meal: "lunch",
     veg: false,
   },
   {
-    name: "pancakes",
+    name: "Beef Stroganoff",
     continent: "America",
-    meal: "lunch",
+    meal: "dinner",
     veg: true,
   },
   {
-    name: "pizza",
+    name: "Tamale Pie",
     continent: "Europe",
     meal: "dinner",
     veg: false,
   },
   {
-    name: "paella",
-    continent: "Europe",
+    name: "Sweet Potato Hash",
+    continent: "America",
     meal: "lunch",
-    veg: false,
+    veg: true,
+  },
+  {
+    name: "Powder Biscuit",
+    continent: "America",
+    meal: "dessert",
+    veg: true,
+  },
+  {
+    name: "Pecan Pie",
+    continent: "America",
+    meal: "dessert",
+    veg: true,
   },
 ];
 
