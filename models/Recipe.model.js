@@ -18,7 +18,7 @@ const recipeSchema = new Schema(
     meal: {
       type: String,
       required: true,
-      enum: ["breakfast", "lunch", "dessert", "dinner"]
+      enum: ["breakfast", "lunch", "dinner"]
     },
     veg: {
         type:Boolean,
