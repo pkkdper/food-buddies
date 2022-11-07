@@ -10,19 +10,26 @@
   </head>
 
   <body>
-    <div>
-      <nav>
-        <a href="/">Home</a>
-        <% if (isConnected) { %>
-        <a href="/auth/logout">Logout</a>
-        <% } else { %>
-        <a href="/auth/signup">Signup</a>
-        <a href="/auth/login"> Login</a>
-        <% } %>
-      </nav>
-    </div>
+    <header>
+      <div>
+        <nav class="nav-bar">
+          <img src="/images/FOOD BUDDIES (5).png" height="180px" width="auto" />
+          <ul>
+            <li><a href="/">Home</a></li>
+            <% if (isConnected) { %>
+            <li><a href="/auth/home-food-buddies">Home Food Buddies</a></li>
+            <% } else { %>
+            <li><a href="/auth/signup">Signup</a></li>
+            <li><a href="/auth/login"> Login</a> <% } %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
     <%-body%>
-
+<% if (isConnected) { %> 
+    <a href="/auth/logout"><button type="submit">Log Out</button></a>
+    <% } %> 
     <script src="/js/script.js"></script>
   </body>
 </html>
