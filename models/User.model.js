@@ -19,7 +19,11 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true
-    }
+    },
+    likedRecipes: {
+      type:[Schema.Types.ObjectId],
+      ref:"Recipe"
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`    
