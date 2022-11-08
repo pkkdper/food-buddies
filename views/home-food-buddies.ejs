@@ -34,7 +34,7 @@
 <h2>Meal ideas based on your selected option</h2>
 
 <% if (typeof selectedRecipes !== 'undefined') { %>
- <h1>test</h1>
+  
 <% selectedRecipes.forEach(recipe => { %>
   <h2><%= recipe.name %></h2>
   <button><a href="/recipes/add-recipe/<%= recipe._id %>">ADD RECIPE</a></button>

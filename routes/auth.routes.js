@@ -62,13 +62,17 @@ router.post("/signup", isLoggedOut, async (req, res) => {
   })
 
 // setting profile route
-router.get('/profile', isLoggedIn, (req, res) => {
+router.get('/profile', isLoggedIn, async(req, res) => {
   console.log(req.session)
-  if (req.session.user) {
-    res.render('user/profile', { user: req.session.user.username})
-  } else {
-    res.redirect('/auth/login')
-  }})
+  try {
+    const loginUser = await User.findById(req.session.user._id).populate('likedRecipes')
+    console.log(loginUser)
+    res.render('user/profile', {loginUser})
+  }
+  catch (error) {
+    console.log(error);
+  }
+});
 
 // setting logout route
 router.get('/logout', isLoggedIn, (req, res, next) => {

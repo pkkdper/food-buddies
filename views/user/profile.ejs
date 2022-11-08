@@ -1,4 +1,4 @@
-<h2>This is your profile page</h2>
+<h2>This is your food buddies page</h2>
 
 
 <!--
@@ -9,4 +9,11 @@ login > profile > CRUD only on recipes >  update and delete
 -->
 
 
+<h4>Welcome <%- loginUser.username %> </h4>
 
+<p>Liked Recipe</p>
+<% loginUser.likedRecipes.forEach(recipe => { %>
+ <p><%= recipe.name %>  </p>
+ <p><%= recipe.continent %>  </p>
+ <p><%= recipe.meal %>  </p>
+<% }) %>
