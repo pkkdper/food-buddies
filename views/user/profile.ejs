@@ -8,12 +8,12 @@ login > profile > CRUD only on recipes >  update and delete
 
 -->
 
-
 <h4>Welcome <%- loginUser.username %> </h4>
 
-<p>Liked Recipe</p>
+<p>Liked Recipes:</p>
 <% loginUser.likedRecipes.forEach(recipe => { %>
  <p><%= recipe.name %>  </p>
  <p><%= recipe.continent %>  </p>
  <p><%= recipe.meal %>  </p>
+ <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
 <% }) %>

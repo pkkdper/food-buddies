@@ -17,7 +17,6 @@ router.get('/signup', isLoggedOut, (req, res) => {
 // setting POST signup route
 router.post("/signup", isLoggedOut, async (req, res) => {
   try {
-    console.log("The form data: ", req.body);
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(req.body.password, salt);
     await User.create({
@@ -44,7 +43,6 @@ router.post("/signup", isLoggedOut, async (req, res) => {
   // setting POST login route
 
   router.post('/login', isLoggedOut, async (req, res) => {
-    console.log("here", req.body)
     const { username, password } = req.body
 
     const currentUser = await User.findOne({ username })
@@ -52,7 +50,7 @@ router.post("/signup", isLoggedOut, async (req, res) => {
       res.render('auth/login', { errorMessage: 'No user with this username'})
     } else {
       if (bcrypt.compareSync(password, currentUser.password)) {
-        console.log('Correct password')
+
         req.session.user = currentUser
         res.redirect('/auth/profile')
       } else {
@@ -63,10 +61,8 @@ router.post("/signup", isLoggedOut, async (req, res) => {
 
 // setting profile route
 router.get('/profile', isLoggedIn, async(req, res) => {
-  console.log(req.session)
   try {
     const loginUser = await User.findById(req.session.user._id).populate('likedRecipes')
-    console.log(loginUser)
     res.render('user/profile', {loginUser})
   }
   catch (error) {
@@ -86,7 +82,7 @@ router.get('/logout', isLoggedIn, (req, res, next) => {
 
 // setting food home route
 router.get('/home-food-buddies', isLoggedIn, (req, res) => {
-  console.log(req.session)
+
     res.render('home-food-buddies')
 })
 
