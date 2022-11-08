@@ -4,16 +4,18 @@ const Recipe = require('../models/Recipe.model')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const app = require('../app')
+const { isLoggedOut } = require('../middlewares/middlewares')
+const { isLoggedIn } = require('../middlewares/middlewares')
 
 
 // setting signup route
-router.get('/signup', (req, res) => {
+router.get('/signup', isLoggedOut, (req, res) => {
   res.render('auth/signup')
 })
 
 
 // setting POST signup route
-router.post("/signup", async (req, res) => {
+router.post("/signup", isLoggedOut, async (req, res) => {
   try {
     console.log("The form data: ", req.body);
     const salt = bcrypt.genSaltSync(10);
@@ -33,7 +35,7 @@ router.post("/signup", async (req, res) => {
   // setting login route
   router.get('/login', 
   
-  //middleware
+  isLoggedOut,
   
   (req, res) => {
     res.render('auth/login')
@@ -41,7 +43,7 @@ router.post("/signup", async (req, res) => {
 
   // setting POST login route
 
-  router.post('/login', async (req, res) => {
+  router.post('/login', isLoggedOut, async (req, res) => {
     console.log("here", req.body)
     const { username, password } = req.body
 
@@ -60,7 +62,7 @@ router.post("/signup", async (req, res) => {
   })
 
 // setting profile route
-router.get('/profile', (req, res) => {
+router.get('/profile', isLoggedIn, (req, res) => {
   console.log(req.session)
   if (req.session.user) {
     res.render('user/profile', { user: req.session.user.username})
@@ -69,7 +71,7 @@ router.get('/profile', (req, res) => {
   }})
 
 // setting logout route
-router.get('/logout', (req, res, next) => {
+router.get('/logout', isLoggedIn, (req, res, next) => {
   req.session.destroy(err => {
     if (err) {
       next(err)
@@ -79,7 +81,7 @@ router.get('/logout', (req, res, next) => {
 })
 
 // setting food home route
-router.get('/home-food-buddies', (req, res) => {
+router.get('/home-food-buddies', isLoggedIn, (req, res) => {
   console.log(req.session)
     res.render('home-food-buddies')
 })

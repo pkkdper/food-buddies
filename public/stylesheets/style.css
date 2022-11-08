@@ -1,7 +1,6 @@
 body {
   padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:rosybrown  ;
   font-family: 	
   Leelawadee;
   font-weight: 400;
@@ -12,7 +11,7 @@ nav img {
   margin-top: -25px;
 }
 nav {
-  background-color:floralwhite;
+  background: rgba(255, 255, 255, 0.65);
   position: relative;
   top: 0;
   left: 0;
@@ -58,7 +57,7 @@ form button{
     font-weight: 520;
     justify-content: center;
     line-height: 1;
-    margin-left: 15px;
+    margin: 50px 0 40px 0px;
     padding: 8px 10px;
     text-align: center;
     text-decoration: none;
@@ -69,4 +68,28 @@ form button{
     box-shadow: #121212 0 0 0 0.5px, transparent 0 0 0 0;
   }
 
-form
+form {
+    background: rgba(0, 0, 0, 0.47);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      width: 600px;
+      padding: 25px 0 20px 0;
+      color: #fff;
+      font-weight: 600;}
+label {
+  margin-top: 30px;
+}
+.form {display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+input {
+  margin-left: 20px;
+}

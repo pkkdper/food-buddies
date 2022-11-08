@@ -1,17 +1,19 @@
+<link rel="stylesheet" href="/stylesheets/styleLogSign.css" />
 <h1>Sign Up</h1>
+<div class="form">
 
 <form method="POST" action="/auth/signup">
 
-  <label>Username: <input type="text" name="username" placeholder="Your name here" required /></label>
+  <label>Username:<input type="text" name="username" placeholder="Your name here" required /></label>
   
-  <label>Email: <input type="email" name="email" placeholder="Your email here" required /></label>
+  <label>Email:<input type="email" name="email" placeholder="Your email here" required /></label>
 
-  <label>Password: <input type="password" name="password" placeholder="Your password here" required /></label>
+  <label>Password:<input type="password" name="password" placeholder="Your password here" required /></label>
 
   <button>Create Account</button>
 
 </form>
-
+</div>
 
 <% if (typeof errorMessage !== 'undefined') { %>
   <p><%= errorMessage %></p>
