@@ -6,21 +6,12 @@ login > profile > CRUD only on recipes >  update and delete
 
 -->
 
-<h2>Welcome <%- loginUser.username %> </h2>
+<h4>Welcome <%- loginUser.username %> </h4>
 
-<h3>Your Food Buddies Profile</h3>
-
-
-<form method="POST" action="/recipes/delete/<%= recipe.id%>">
-
+<p>Liked Recipes:</p>
 <% loginUser.likedRecipes.forEach(recipe => { %>
-
-<label>Name : <input type="text" name="name" value="<%= recipe.name %>"  /></label>
-<label>Continent :<input type="text" name="continent" value="<%= recipe.continent %>" /></label>
-<label>Type of Meal :<input type="text" name="meal" value="<%= recipe.meal %>" /></label>
-
-<button><a href="/recipes/delete/<%= recipe._id %>">DELETE RECIPE</a></button><br>
-
+ <p><%= recipe.name %>  </p>
+ <p><%= recipe.continent %>  </p>
+ <p><%= recipe.meal %>  </p>
+ <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
 <% }) %>
-
-</form>
