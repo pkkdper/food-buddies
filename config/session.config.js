@@ -21,4 +21,9 @@ module.exports = app => {
       }),
     })
   )
+  // middle ware for making the user available to all templates
+app.use((req, res, next) => {
+  res.locals.user = req.session.user;
+  next();
+});
 }
