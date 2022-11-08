@@ -8,7 +8,6 @@ const app = require('../app')
 router.get('/home-food-buddies', async (req, res, next) => {
   console.log(req.query)
   try {
-  
     const selectedRecipes = await Recipe.find({continent: req.query.continent, meal: req.query.meal})
     console.log(selectedRecipes)
     res.render('home-food-buddies')
@@ -17,10 +16,5 @@ router.get('/home-food-buddies', async (req, res, next) => {
     console.log(err)
   }
 })
-
-
-
-
-
 
 module.exports = router;
