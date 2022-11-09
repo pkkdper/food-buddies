@@ -1,23 +1,16 @@
 
-<!--
-login > profile > CRUD only on recipes >  update and delete
-                > home-food-buddies > all filters option available > selected-recipes as result > add to the profile
-              
-
--->
-
 <h2>Welcome <%- loginUser.username %> to your food buddies</h2>
 <h3>Need new ideas, then please <button><a href= "home-food-buddies">Go to filter</a></button></h3>
 
 
-<p>Here you can have fun with your new added meal and update them</p>
+<p>Here you can have fun with your new added meals and update them</p>
 
 
 <% loginUser.likedRecipes.forEach(recipe => { %>
- <p><%= recipe.name %>  </p>
- <p><%= recipe.continent %>  </p>
- <p><%= recipe.meal %>  </p>
- <p><%= recipe.info %>  </p>
+ <p>Meal name: <%= recipe.name %>  </p>
+ <p>Continent: <%= recipe.continent %>  </p>
+ <p>Type of Meal: <%= recipe.meal %>  </p>
+ <p>Info: <%= recipe.info %>  </p>
   
  <button><a href="/recipes/update-recipe/<%= recipe._id %>">Go to Update Page</a></button>
  <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>

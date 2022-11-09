@@ -1,7 +1,6 @@
-<h1>Here you can update your meal</h1>
+<h3>Here you can update your meals</h3>
 
 <div>
-
 <form method="POST" action="/recipes/update-recipe/<%= findRecipe.id %>">
 
   <label>Meal name :<input type="text" name="name" value="<%- findRecipe.name %>" required /></label>
@@ -27,30 +26,50 @@
         <option value="Africa">Africa</option>
 
         <% } else if(findRecipe.continent === "Africa"){ %>
-          <option value="America">America</option>
-          <option value="Europe">Europe</option>
-          <option value="Asia">Asia</option>
-          <option value="Africa" selected>Africa</option>
+       <option value="America">America</option>
+       <option value="Europe">Europe</option>
+       <option value="Asia">Asia</option>
+       <option value="Africa" selected>Africa</option>
 
-<% } %>
+      <% } %>
+
     </select>
-  
-  
   </label>
 
   <label>Type of Meal :
     <select name="meal">
-      <option value="breakfast">Breakfast</option>
-      <option value="lunch">Lunch</option>
-      <option value="dinner">Dinner</option>
-      <option value="dessert">Dessert</option>
-    </select>
+      <% if (findRecipe.meal === "breakfast") { %>
+        <option value="breakfast" selected>Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="dessert">Dessert</option>
   
-  </label>
+        <% } else if(findRecipe.meal === "lunch"){ %>
+       <option value="breakfast">Breakfast</option>
+        <option value="lunch" selected>Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="dessert">Dessert</option>
 
-  <label>Info :<input type="text" name="info" /></label>
+      <% } else if(findRecipe.meal === "dinner"){ %>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner" selected>Dinner</option>
+        <option value="dessert">Dessert</option>
 
-  <button>Update Meal</button>
+        <% } else if(findRecipe.meal === "dessert"){ %>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="dessert" selected>Dessert</option>
+
+        <% } %>
+
+    </select>
+    </label>
+
+    <label>Info :<input type="text" name="info" value="<%- findRecipe.info %>"/></label>
+
+    <button>Update Meal</button>
 
 </form>
 </div>
