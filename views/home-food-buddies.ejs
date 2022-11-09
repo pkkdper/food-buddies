@@ -30,7 +30,11 @@
 <% if (typeof selectedRecipes !== 'undefined') { %>
   
 <% selectedRecipes.forEach(recipe => { %>
-  <h2><%= recipe.name %></h2>
+ <p><%= recipe.name %>  </p>
+ <p><%= recipe.continent %>  </p>
+ <p><%= recipe.meal %>  </p>
+ <p><%= recipe.info %>  </p>
+
   <button><a href="/recipes/add-recipe/<%= recipe._id %>">ADD RECIPE</a></button>
 <% }) %>
 <% } %>
