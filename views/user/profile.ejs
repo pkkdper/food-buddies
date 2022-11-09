@@ -1,5 +1,5 @@
 
-<h2>Welcome <%- loginUser.username %> to your food buddies</h2>
+<h2>Welcome <%- loginUser.username %> to your food buddies profile</h2>
 <h3>Need new ideas, then please <button><a href= "home-food-buddies">Go to filter</a></button></h3>
 
 
@@ -11,7 +11,10 @@
  <p>Continent: <%= recipe.continent %>  </p>
  <p>Type of Meal: <%= recipe.meal %>  </p>
  <p>Info: <%= recipe.info %>  </p>
-  
- <button><a href="/recipes/update-recipe/<%= recipe._id %>">Go to Update Page</a></button>
- <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
+
+ <button><a href="https://www.google.com/search?q=<%= recipe.name %>&tbm=isch" target="_blank">Food Buddies Image</a></button> 
+ <button><a href="/recipes/update-recipe/<%= recipe._id %>">Update Meal</a></button>
+ <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete Meal</a></button>
 <% }) %>
+
+<a href="#"><button>Back to Top</button></a>

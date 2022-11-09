@@ -31,6 +31,7 @@ router.post("/signup", isLoggedOut, async (req, res) => {
   }
 });
 
+
   // setting login route
   router.get('/login', 
   
