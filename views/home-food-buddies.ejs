@@ -1,4 +1,4 @@
-<h2>No idea what meal to try, then let us help you give some ideas!</h2>
+<h3>No idea what meal to try, then let us help you give some ideas!</h3>
 
 <form method="GET" action="/recipes/home-food-buddies">
   <label for="continent-select">Choose a continent</label>
@@ -25,15 +25,15 @@
 
 </form>
 
-<h2>Meal ideas based on your selected option</h2>
+<h3>Food Buddies ideas based on your selected options</h3>
 
 <% if (typeof selectedRecipes !== 'undefined') { %>
   
 <% selectedRecipes.forEach(recipe => { %>
- <p><%= recipe.name %>  </p>
- <p><%= recipe.continent %>  </p>
- <p><%= recipe.meal %>  </p>
- <p><%= recipe.info %>  </p>
+<p>Meal name: <%= recipe.name %>  </p>
+ <p>Continent: <%= recipe.continent %>  </p>
+ <p>Type of Meal: <%= recipe.meal %>  </p>
+ <p>Info: <%= recipe.info %>  </p>
 
   <button><a href="/recipes/add-recipe/<%= recipe._id %>">ADD RECIPE</a></button>
 <% }) %>
