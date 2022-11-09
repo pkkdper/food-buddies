@@ -1,17 +1,17 @@
 body {
-  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   font-family: 	
   Leelawadee;
   font-weight: 400;
   font-size: 16px;
+  margin:0
 }
 
 nav img {
   margin-top: -25px;
 }
 nav {
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.85);
   position: relative;
   top: 0;
   left: 0;
@@ -23,7 +23,6 @@ nav {
     justify-content: flex-start;
     align-items: stretch; 
     align-content: stretch;
-    box-shadow: 0 0 2px 0 gray;
 }
 li {
   padding: 20px;
