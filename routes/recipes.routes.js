@@ -60,36 +60,4 @@ router.get('/delete-recipe/:recipeId', async(req, res, next) => {
 });
 
 
-
-// get the update route
-
-// router.get('/update-recipe/:recipeId', async(req, res, next) => {
-//   const { recipeId } = req.params 
-//   const userId = req.session.user._id
-
-//    try {
-//     await
-//     User.findByIdAndUpdate(userId, {$pull:{likedRecipes: recipeId}})
-  
-//   res.redirect('/auth/profile')
-//  }
-//     catch(err) {console.log(err)};
-// })
-
-
-// //post the update route
-
-// router.post('/update-recipe/:recipeId', async(req, res, next) => {
-//   const { recipeId } = req.params 
-//   const userId = req.session.user._id
-
-//    try {
-//     await
-//     User.findByIdAndUpdate(userId, {$pull:{likedRecipes: recipeId}})
-  
-//   res.redirect('/auth/profile')
-//  }
-//     catch(err) {console.log(err)};
-// });
-
 module.exports = router;
