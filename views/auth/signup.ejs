@@ -1,7 +1,10 @@
 <link rel="stylesheet" href="/stylesheets/styleLogSign.css" />
-<h1>Sign Up</h1>
+<div class="formContainer">
 <div class="form">
-
+<h1>Sign Up</h1>
+<%if(!user) {%>
+  <h3>Please Sign Up first if you don't have an account.</h3>
+<%}%>
 <form method="POST" action="/auth/signup">
 
   <label>Username:<input type="text" name="username" placeholder="Your name here" required /></label>
@@ -12,7 +15,7 @@
 
 </form>
 </div>
-
+</div>
 <% if (typeof errorMessage !== 'undefined') { %>
   <p><%= errorMessage %></p>
   <% } %>

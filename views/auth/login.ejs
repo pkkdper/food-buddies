@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="/stylesheets/styleLogSign.css" />
+
+<div class="formContainer">
+<div class = "form">
 <h1>LOGIN</h1>
 
 <%if(!user) {%>
   <h3>Please Log In first to access the Home Food Buddies page.</h3>
 <%}%>
-
-<div class = "form">
-
 <form action="/auth/login" method="POST">
 
 <label>Username:<input type="text" placeholder="Your name here" name="username" required ></label>
@@ -17,7 +17,7 @@
 
 </form>
 </div>
-
+</div>
 <% if (typeof errorMessage !== 'undefined') { %>
   <p><%= errorMessage %></p>
   <% } %>

@@ -1,43 +1,43 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-family: 	
-  Leelawadee;
+  font-family: Leelawadee;
   font-weight: 400;
   font-size: 16px;
-  margin:0
+  margin: 0;
+}
+* {
+  text-align: center;
 }
 
 nav img {
   margin-top: -25px;
 }
 nav {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(231, 155, 59, 0.9);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
   height: 140px;
-  
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch; 
-    align-content: stretch;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
 }
 li {
   padding: 20px;
   font-size: 35px;
   padding-right: 25px;
-
 }
 ul {
-  list-style-type:none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: space-between;  
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
 }
 
 ul li a {
@@ -45,7 +45,7 @@ ul li a {
   color: black;
   font-weight: 800;
 }
-form button{
+/* form button{
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
@@ -61,34 +61,124 @@ form button{
     text-align: center;
     text-decoration: none;
     transition: box-shadow .2s,-webkit-box-shadow .2s;
-    border: 0;}
-  
-  button:hover {
-    box-shadow: #121212 0 0 0 0.5px, transparent 0 0 0 0;
-  }
-
-form {
-    background: rgba(0, 0, 0, 0.47);
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      width: 600px;
-      padding: 25px 0 20px 0;
-      color: #fff;
-      font-weight: 600;}
-label {
-  margin-top: 30px;
+    border: 0;
+} */
+button:hover {
+  box-shadow: #121212 0 0 0 0.5px, transparent 0 0 0 0;
 }
-.form {display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+.formUpdate {
+  color: #121212;
+  background: rgba(0, 0, 0, 0.47);
+  width: 600px;
+  padding:20px 0px 10px 0px
+}
+form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-bottom: 20px ;
+  color: #fff;
+  font-weight: 600;
+}
+label {
+  margin-bottom: 10px;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.form {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center; */
+  background: rgba(0, 0, 0, 0.47);
+  width: 600px;
+  color:#E6E5E3;
+}
+
+.form label {
+  margin:20px;
 }
 input {
   margin-left: 20px;
+}
+.form button {
+  margin-top: 20px;
+  margin-bottom: 20px;}
+.filterPageClass,
+.updateLikedRecipesClass {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+  padding: 20px, 0px, 10px, 0px;
+}
+
+.filterPageClass.form,
+.updateLikedRecipesClass.form {
+  background: rgba(0, 0, 0, 0.47);
+}
+
+form button,
+button {
+  background: #fff;
+  backface-visibility: hidden;
+  /* border-radius: .500rem;
+  border-style: solid; */
+  border-width: 0.1.8rem;
+  box-sizing: border-box;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Leelawadee;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform 0.2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-color: #583830;
+}
+a {
+  text-decoration: none;
+  color: #121212;
+}
+form select {
+  margin-bottom: 25px;
+}
+
+form select option {
+  text-align: center;
+}
+form select {
+  width: 300px;
+  height: 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Leelawadee;
+  font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+  text-align: center;
 }
