@@ -1,0 +1,56 @@
+<h1>Here you can update your meal</h1>
+
+<div>
+
+<form method="POST" action="/recipes/update-recipe/<%= findRecipe.id %>">
+
+  <label>Meal name :<input type="text" name="name" value="<%- findRecipe.name %>" required /></label>
+
+  <label>Continent :
+    <select name="continent">
+      <% if (findRecipe.continent === "America") { %>
+      <option value="America" selected>America</option>
+      <option value="Europe">Europe</option>
+      <option value="Asia">Asia</option>
+      <option value="Africa">Africa</option>
+
+      <% } else if(findRecipe.continent === "Europe"){ %>
+      <option value="America">America</option>
+      <option value="Europe" selected>Europe</option>
+      <option value="Asia">Asia</option>
+      <option value="Africa">Africa</option>
+
+      <% } else if(findRecipe.continent === "Asia"){ %>
+        <option value="America">America</option>
+        <option value="Europe">Europe</option>
+        <option value="Asia" selected>Asia</option>
+        <option value="Africa">Africa</option>
+
+        <% } else if(findRecipe.continent === "Africa"){ %>
+          <option value="America">America</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia">Asia</option>
+          <option value="Africa" selected>Africa</option>
+
+<% } %>
+    </select>
+  
+  
+  </label>
+
+  <label>Type of Meal :
+    <select name="meal">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="dessert">Dessert</option>
+    </select>
+  
+  </label>
+
+  <label>Info :<input type="text" name="info" /></label>
+
+  <button>Update Meal</button>
+
+</form>
+</div>

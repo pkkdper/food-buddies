@@ -6,12 +6,19 @@ login > profile > CRUD only on recipes >  update and delete
 
 -->
 
-<h4>Welcome <%- loginUser.username %> </h4>
+<h2>Welcome <%- loginUser.username %> to your food buddies</h2>
+<h3>Need new ideas, then please <button><a href= "home-food-buddies">Go to filter</a></button></h3>
 
-<p>Liked Recipes:</p>
+
+<p>Here you can have fun with your new added meal and update them</p>
+
+
 <% loginUser.likedRecipes.forEach(recipe => { %>
  <p><%= recipe.name %>  </p>
  <p><%= recipe.continent %>  </p>
  <p><%= recipe.meal %>  </p>
+ <p><%= recipe.info %>  </p>
+  
+ <button><a href="/recipes/update-recipe/<%= recipe._id %>">Go to Update Page</a></button>
  <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
 <% }) %>

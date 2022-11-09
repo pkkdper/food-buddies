@@ -87,4 +87,3 @@ router.get('/home-food-buddies', isLoggedIn, (req, res) => {
 })
 
 module.exports = router;
-
