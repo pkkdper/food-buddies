@@ -1,6 +1,5 @@
 <h2>This is your food buddies page</h2>
 
-
 <!--
 login > profile > CRUD only on recipes >  update and delete
                 > home-food-buddies > all filters option available > selected-recipes as result > add to the profile
@@ -8,12 +7,16 @@ login > profile > CRUD only on recipes >  update and delete
 
 -->
 
-<h4>Welcome <%- loginUser.username %> </h4>
-
+<h4>Welcome <%- loginUser.username %></h4>
+<% if (loginUser.likedRecipes.length > 0) {%>
 <p>Liked Recipes:</p>
 <% loginUser.likedRecipes.forEach(recipe => { %>
- <p><%= recipe.name %>  </p>
- <p><%= recipe.continent %>  </p>
- <p><%= recipe.meal %>  </p>
- <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
-<% }) %>
+<p><%= recipe.name %></p>
+<p><%= recipe.continent %></p>
+<p><%= recipe.meal %></p>
+<button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
+<button><a href="/recipes/update-recipe/<%= recipe._id %>">Update</a></button>
+<% })} else {%>
+<h3>There's no recipes in your list!</h3>
+<h3>Add it in Home Food Buddies Page</h3>
+<%}%>
