@@ -70,5 +70,18 @@ router.get('/delete-recipe/:recipeId', async(req, res, next) => {
     catch(err) {console.log(err)};
 });
 
+router.get('/delete-recipe/:recipeId', async(req, res, next) => {
+  const { recipeId } = req.params 
+  const userId = req.session.user._id
+
+   try {
+    await
+    User.findByIdAndUpdate(userId, {$pull:{likedRecipes: recipeId}})
+  
+  res.redirect('/auth/profile')
+ }
+    catch(err) {console.log(err)};
+});
+
 
 module.exports = router;
