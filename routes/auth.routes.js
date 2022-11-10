@@ -88,7 +88,7 @@ router.get("/logout", isLoggedIn, (req, res, next) => {
     if (err) {
       next(err);
     }
-    res.redirect("/auth/login");
+    res.redirect("/");
   });
 });
 
