@@ -1,14 +1,12 @@
 <link rel="stylesheet" href="/stylesheets/styleLogSign.css" />
 
+<div class="formContainer">
+<div class = "form">
+<h1>LOGIN</h1>
 
 <%if(!user) {%>
   <h3>Please register to access the Food Buddies</h3>
 <%}%>
-
-<div class = "form">
-
-<h1>LOGIN</h1>
-
 <form action="/auth/login" method="POST">
 
 <label>Username:<input type="text" placeholder="Enter username" name="username" required ></label>
@@ -19,7 +17,14 @@
 
 </form>
 </div>
-
+</div>
+<div class="container">
+  <div class="jumbotron text-center text-primary">
+      <h1><span class="fa fa-lock"></span> Social Authentication</h1>
+      <p>Login or Register with:</p>
+      <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google"></span> SignIn with Google</a>
+  </div>
+</div>
 <% if (typeof errorMessage !== 'undefined') { %>
   <p><%= errorMessage %></p>
   <% } %>
