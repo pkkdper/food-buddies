@@ -1,4 +1,4 @@
-![Food Buddies](../images/FOOD BUDDIES (5).png)
+![Food Buddies](../public/images/FOOD BUDDIES (5).png)
 
 
 
