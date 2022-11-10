@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-require("../config/config.recipes");
+// require("../config/config.recipes");
 const Recipe = require("../models/Recipe.model");
 require("./index")
 
