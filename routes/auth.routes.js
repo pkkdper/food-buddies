@@ -16,18 +16,32 @@ router.get('/signup', isLoggedOut, (req, res) => {
 
 // setting POST signup route
 router.post("/signup", isLoggedOut, async (req, res) => {
+ 
+
   try {
     const salt = bcrypt.genSaltSync(10);
     const hashedPassword = bcrypt.hashSync(req.body.password, salt);
+    const { username, email, password } = req.body;
+
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    if (!regex.test(password)) {
+      res
+        .status(500)
+        .render('auth/signup', { errorMessage: 'Password needs to have at least 6 characters, one number, one lowercase and one uppercase letter.' });
+      return;
+    }
+    
     await User.create({
       email: req.body.email,
       username: req.body.username,
       password: hashedPassword,
+      
     });
     res.redirect("/auth/login");
   } catch (error) {
+    
     console.log(error);
-    res.render('auth/signup', { errorMessage: error.message})
+    res.render('auth/signup', { errorMessage: 'Username is already used.'})
   }
 });
 

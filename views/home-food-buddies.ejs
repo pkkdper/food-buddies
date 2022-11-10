@@ -35,10 +35,11 @@
  <p>Type of Meal: <%= recipe.meal %>  </p>
  <p>Info: <%= recipe.info %>  </p>
 
+ <button><a href="/recipes/add-recipe/<%= recipe._id %>">Add Meal</a></button>
+ 
+ <button><a href="https://www.google.com/search?q=<%= recipe.name %>&tbm=isch" target="_blank">Check Meal Images</a></button> 
 
- <button><a href="https://www.google.com/search?q=<%= recipe.name %>&tbm=isch" target="_blank">Food Buddies Image</a></button> 
-
- <button><a href="/recipes/add-recipe/<%= recipe._id %>">ADD RECIPE</a></button>
+ 
 <% }) %>
 <% } %>
 
