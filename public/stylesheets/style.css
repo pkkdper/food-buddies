@@ -7,13 +7,14 @@ body {
   padding: 0;
   /* background-image: url("../images/Add\ delicious\ recipes\ with\ out\ Food\ Buddies\ pagee\ \(1\).png");    */
 color: #fff;
-  background: url("../images/Add\ delicious\ recipes\ with\ out\ Food\ Buddies\ pagee\ \(1\).png");
-  background-size: cover;
+  background:  url("../images/image.png");
+  /* background-size: cover; */
   background-repeat: no-repeat;
-height: 100%;}
-/* body, html {
+}
+body, html {
   height: 100%;
-} */
+  margin: 0;
+}
 * {
   text-align: center;
 }
@@ -137,7 +138,7 @@ button {
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
-  padding: 0.5rem 0.8rem;
+  padding: 0.3rem 0.5rem;
   position: relative;
   text-align: left;
   text-decoration: none;
