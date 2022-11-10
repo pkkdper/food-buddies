@@ -1,4 +1,4 @@
-![Food Buddies](/public/images/FOOD BUDDIES (5).png)
+![Food Buddies](https://github.com/pkkdper/food-buddies/blob/master/public/images/FOOD%20BUDDIES%20(5).png)
 
 
 
