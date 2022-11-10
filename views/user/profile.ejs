@@ -1,4 +1,4 @@
-
+<!-- <img class="backgroundImage" src="/images/Add delicious recipes with out Food Buddies pagee (1).png"> -->
 <h2>Welcome <%- loginUser.username %> to your food buddies</h2>
 <h3>Need new ideas, then please <a href= "home-food-buddies">Go to filter</a></h3>
 
@@ -10,8 +10,8 @@
  <p>Meal name: <div class="likedRecipeClass"><%= recipe.name %></div>  </p>
  <p>Continent: <div class="likedRecipeClass"><%= recipe.continent %></div>  </p>
  <p>Type of Meal: <div class="likedRecipeClass"><%= recipe.meal %></div>  </p>
- <p>Info: <div class="likedRecipeClass"><%= recipe.info %></div>  </p>
-
+ <!-- <p>Info: <div class ="info" class="likedRecipeClass"><%= recipe.info %></div>  </p> -->
+ <p><label>Info :<hr><input class ="info" type="text" name="info" value="<%- recipe.info %>"/></label></p>
  <button><a href="/recipes/update-recipe/<%= recipe._id %>">Go to Update Page</a></button>
  <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete</a></button>
 <% }) %>
