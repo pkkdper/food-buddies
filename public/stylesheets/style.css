@@ -7,7 +7,7 @@ body {
   padding: 0;
   /* background-image: url("../images/Add\ delicious\ recipes\ with\ out\ Food\ Buddies\ pagee\ \(1\).png");    */
 color: #fff;
-  background-image: url("./public/images/image.png");
+  background-image: url("/images/image.png");
   /* background-size: cover; */
   background-repeat: no-repeat;
 }
