@@ -2,20 +2,21 @@
 <div class="formContainer">
 <div class="form">
   
-<h1>Signup</h1>
+<h1>Sign Up</h1>
 
 <form method="POST" action="/auth/signup">
 
-  <label>Username:<input type="text" name="username" placeholder="Enter username" required /></label>
+  <label>Username <input type="text" name="username" placeholder="Enter username" required /></label>
 
-  <label>Password:<input type="password" name="password" placeholder="Enter password" required /></label>
+  <label>Password <input type="password" name="password" placeholder="Enter password" required /></label>
 
-  <button>Create Account</button>
+  <button>Register</button>
 
 </form>
 </div>
 </div>
+
 <% if (typeof errorMessage !== 'undefined') { %>
-  <p><%= errorMessage %></p>
+  <p style="color:white"><%= errorMessage %></p>
   <% } %>
 

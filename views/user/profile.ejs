@@ -1,17 +1,18 @@
 
 <h2>Welcome <%- loginUser.username %> to your food buddies</h2>
-<h3>Need new ideas, then please <a href= "home-food-buddies">Go to filter</a></h3>
+<h3>Do you need new ideas? then please <a href= "home-food-buddies">Go to filter</a></h3>
 
 
-<p>Here you can have fun with your new added meals, update the meal, check the image and the recipes with the best rating on Google only with one click</p>
+<p>Here you can have fun with your new added meals</p>
+<p>Check also the meal's best recipes on Google</p></p>
 
 
 <% loginUser.likedRecipes.forEach(recipe => { %>
- <p>Meal name: <div class="likedRecipeClass"><%= recipe.name %></div>  </p>
- <p>Continent: <div class="likedRecipeClass"><%= recipe.continent %></div>  </p>
- <p>Type of Meal: <div class="likedRecipeClass"><%= recipe.meal %></div>  </p>
- <p>Info: <div class="likedRecipeClass"><%= recipe.info %></div>  </p>
-
+ <p><b><u>Meal name</u></b><div class="likedRecipeClass"><%= recipe.name %></div>  </p>
+ <p><b><u>Continent</u></b><div class="likedRecipeClass"><%= recipe.continent %></div>  </p>
+ <p><b><u>Type of Meal</u></b><div class="likedRecipeClass"><%= recipe.meal %></div>  </p>
+ <p><b><u>Info</u></b><div class="likedRecipeClass"><%= recipe.info %></div>  </p>
+ <br>
  <button><a href="/recipes/update-recipe/<%= recipe._id %>">Update Meal</a></button>
  <button><a href="/recipes/delete-recipe/<%= recipe._id %>">Delete Meal</a></button>
 
@@ -19,5 +20,6 @@
  <button><a href="https://www.google.com/search?q=<%= recipe.name %>&tbm=isch" target="_blank">Check Meal Images</a></button> 
  
 <% }) %>
-
+<br>
+<br>
 <a href="#"><button>Back to Top</button></a>

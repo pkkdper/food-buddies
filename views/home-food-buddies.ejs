@@ -1,5 +1,7 @@
 <h3>No idea what meal to try, then let us help you give some ideas!</h3>
 <div class="filterPageClass">
+
+  
 <form method="GET" action="/recipes/home-food-buddies" class="formFilter">
   <label for="continent-select">Choose a continent</label>
   <select name="continent">
@@ -30,11 +32,11 @@
 <% if (typeof selectedRecipes !== 'undefined') { %>
   
 <% selectedRecipes.forEach(recipe => { %>
- <p>Meal name: <%= recipe.name %>  </p>
- <p>Continent: <%= recipe.continent %>  </p>
- <p>Type of Meal: <%= recipe.meal %>  </p>
- <p>Info: <%= recipe.info %>  </p>
-
+  <p><b><u>Meal name</u></b><div class="likedRecipeClass"><%= recipe.name %></div>  </p>
+  <p><b><u>Continent</u></b><div class="likedRecipeClass"><%= recipe.continent %></div>  </p>
+  <p><b><u>Type of Meal</u></b><div class="likedRecipeClass"><%= recipe.meal %></div>  </p>
+  <p><b><u>Info</u></b><div class="likedRecipeClass"><%= recipe.info %></div>  </p>
+  <br>
  <button><a href="/recipes/add-recipe/<%= recipe._id %>">Add Meal</a></button>
  
  <button><a href="https://www.google.com/search?q=<%= recipe.name %>&tbm=isch" target="_blank">Check Meal Images</a></button> 
@@ -43,4 +45,6 @@
 <% }) %>
 <% } %>
 
-
+<br>
+<br>
+<a href="#"><button>Back to Top</button></a>

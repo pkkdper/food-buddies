@@ -4,14 +4,12 @@
 <div class = "form">
 <h1>LOGIN</h1>
 
-<%if(!user) {%>
-  <h3>Please register to access the Food Buddies</h3>
-<%}%>
+
 <form action="/auth/login" method="POST">
 
-<label>Username:<input type="text" placeholder="Enter username" name="username" required ></label>
+<label>Username <input type="text" placeholder="Enter username" name="username" required ></label>
 
-<label>Password:<input type="password" placeholder="Enter password" name="password" required ></label>
+<label>Password <input type="password" placeholder="Enter password" name="password" required ></label>
 
 <button>Login</button>
 
@@ -25,6 +23,7 @@
       <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google"></span> SignIn with Google</a>
   </div>
 </div>
+
 <% if (typeof errorMessage !== 'undefined') { %>
-  <p><%= errorMessage %></p>
+  <p style="color:white"><%= errorMessage %></p>
   <% } %>
