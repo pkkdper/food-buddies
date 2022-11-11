@@ -9,7 +9,7 @@ body {
 color: #fff;
   background-image: url("https://i.ibb.co/rQQD4gy/image-2.png");
   /* background-size: cover; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 body, html {
   height: 100%;
