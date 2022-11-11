@@ -13,17 +13,17 @@ console.log(currentUser)
 const userLikedRecipes = currentUser.likedRecipes
     const selectedRecipes = await Recipe.find({continent: req.query.continent, meal: req.query.meal}) 
  const remainingRecipes = []
- for (i=0; i<userLikedRecipes.length; i++) {
-  for (j=0; j<selectedRecipes.length; j++) {
-    console.log(selectedRecipes[j].name, userLikedRecipes[i].name)
-if (selectedRecipes[j].name !== userLikedRecipes[i].name) {
-  remainingRecipes.push(selectedRecipes[j])
-}
-  }
- }
+//  for (i=0; i<userLikedRecipes.length; i++) {
+//   for (j=0; j<selectedRecipes.length; j++) {
+//     console.log(selectedRecipes[j].name, userLikedRecipes[i].name)
+// if (selectedRecipes[j].name !== userLikedRecipes[i].name) {
+//   remainingRecipes.push(selectedRecipes[j])
+// }
+//   }
+//  }
    
     console.log("remaining", remainingRecipes)
-    res.render('home-food-buddies', {selectedRecipes:remainingRecipes})  
+    res.render('home-food-buddies', {selectedRecipes:selectedRecipes})  
   } 
   catch (err) {
   console.log(err)
