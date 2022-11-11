@@ -9,7 +9,7 @@ body {
 color: #fff;
   background-image: url("https://i.ibb.co/rQQD4gy/image-2.png");
   /* background-size: cover; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
 }
 body, html {
   height: 100%;
@@ -205,7 +205,7 @@ form select{
   width: 350px;
   height: 70px;
 }
-#href {
+.href {
   text-decoration: underline;
   color: rgba(231, 155, 59, 0.9);
 }
@@ -214,4 +214,19 @@ textarea {
   font-family: Leelawadee;
   font-weight: 400;
   font-size: 16px;
+}
+
+.home {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+  margin-top: 80px;
+  background: rgba(0, 0, 0, 0.47);
+}
+.home h3 {
+  font-size: 23px;
+  font-weight: 500;
 }
